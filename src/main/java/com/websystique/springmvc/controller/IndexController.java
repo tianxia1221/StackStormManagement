@@ -17,5 +17,10 @@ public class IndexController {
 	    public String getActionPage() {
 	        return "ActionManagement";
 	    }
+	  
+//	  @RequestMapping(value = "/execution/", method = RequestMethod.GET)
+//	    public String getExecutionPage() {
+//	        return "ExecutionManagement";
+//	    }
 
 }

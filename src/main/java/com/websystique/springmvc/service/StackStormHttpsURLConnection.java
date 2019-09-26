@@ -110,7 +110,7 @@ public class StackStormHttpsURLConnection {
 	public String getWorkflows() throws Exception {
 
 		//String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type";
-		String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type";
+		String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type&pack=examples";
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
