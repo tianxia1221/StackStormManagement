@@ -13,11 +13,11 @@ public class IndexController {
 	        return "UserManagement";
 	    }
 	  
-	  @RequestMapping(value = "/action/", method = RequestMethod.GET)
-	    public String getActionPage() {
-	        return "ActionManagement";
-	    }
-	  
+//	  @RequestMapping(value = "/action1/", method = RequestMethod.GET)
+//	    public String getActionPage() {
+//	        return "ActionManagement";
+//	    }
+//	  
 //	  @RequestMapping(value = "/execution/", method = RequestMethod.GET)
 //	    public String getExecutionPage() {
 //	        return "ExecutionManagement";

@@ -29,7 +29,7 @@
      <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
   </head>
   <body ng-app="myApp" class="ng-cloak">
-      <div class="generic-container" ng-controller="ActionController as ctrl">
+      <div class="generic-container" ng-controller="ExecutionController as ctrl">
           <div class="panel panel-default">
               <div class="panel-heading"><span class="lead">Execution List </span></div>
           </div>
@@ -40,9 +40,12 @@
                   <table class="table table-hover">
                       <thead>
                           <tr>
-                              <th>ref</th>
-                              <th>pack</th>
-                              <th>description</th>
+                              <th>id</th>
+                              <th>action.ref</th>
+                              <th>context.user</th>
+                              <th>status</th>
+                              <th>start_timestamp</th>
+                              <th>end_timestamp</th>
                               <th width="20%"></th>
                           </tr>
                       </thead>

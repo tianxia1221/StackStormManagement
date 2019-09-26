@@ -143,6 +143,44 @@ public class StackStormHttpsURLConnection {
 		return response.toString();
 
 	}
+
+// HTTP GET request
+public String getExecutions() throws Exception {
+
+	//String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type";
+	String url = "https://stackstorm/api/v1/executions?parent=null&limit=50&offset=0&include_attributes=id,status,start_timestamp,end_timestamp,action.ref,action.name,action.runner_type,action.parameters,parameters,rule.ref,trigger.type,context.user";
+
+	URL obj = new URL(url);
+	HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+	// optional default is GET
+	con.setRequestMethod("GET");
+
+	// add request header
+	// con.setRequestProperty("User-Agent", USER_AGENT);
+	
+	con.setRequestProperty("X-Auth-Token", token);
+	con.setRequestProperty("Accept", "application/json");
+	con.setRequestProperty("Content-Type", "application/json; utf-8");
+	
+	int responseCode = con.getResponseCode();
+	System.out.println("\nSending 'GET' request to URL : " + url);
+	System.out.println("Response Code : " + responseCode);
+
+	BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+	String inputLine;
+	StringBuffer response = new StringBuffer();
+
+	while ((inputLine = in.readLine()) != null) {
+		response.append(inputLine);
+	}
+	in.close();
+
+	// print result
+	System.out.println(response.toString());
+	return response.toString();
+
+}
 }
 
 class CustomizedHostnameVerifier implements HostnameVerifier {
