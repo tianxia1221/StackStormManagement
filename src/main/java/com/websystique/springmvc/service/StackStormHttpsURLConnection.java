@@ -38,7 +38,7 @@ public class StackStormHttpsURLConnection {
 		this.token = token;
 	}
 
-	private StackStormHttpsURLConnection http;
+	//private StackStormHttpsURLConnection http;
 
 	public static void main(String[] args) throws Exception {
 		StackStormHttpsURLConnection http = new StackStormHttpsURLConnection();
@@ -53,12 +53,11 @@ public class StackStormHttpsURLConnection {
 	}
 
 	public void init() throws Exception {
-		http = new StackStormHttpsURLConnection();
 
 		trustAllHttpsCertificates();
 		HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
 
-		http.getTokenByPostMethod();
+		getTokenByPostMethod();
 		
 	}
 
