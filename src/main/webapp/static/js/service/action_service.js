@@ -11,8 +11,14 @@ angular.module('myApp').factory('ActionService', ['$http', '$q', function($http,
 
     function fetchAllActions() {
         var deferred = $q.defer();
-        $http.get(REST_SERVICE_URI)
-            .then(
+//        $http.get(REST_SERVICE_URI)
+//          .then(
+
+
+    	$http({
+		    method: 'GET',
+		    url: REST_SERVICE_URI
+		}).then(
             function (response) {
                 deferred.resolve(response.data);
             },

@@ -110,7 +110,7 @@ public class StackStormHttpsURLConnection {
 	public String getWorkflows() throws Exception {
 
 		//String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type";
-		String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type&pack=examples";
+		String url = "https://stackstorm/api/v1/actions?id=5d637cc451887f3ba9bd3816&include_attributes=id,ref,pack,name,description,runner_type&pack=examples";
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -148,7 +148,7 @@ public class StackStormHttpsURLConnection {
 public String getExecutions() throws Exception {
 
 	//String url = "https://stackstorm/api/v1/actions?include_attributes=ref,pack,name,description,runner_type";
-	String url = "https://stackstorm/api/v1/executions?parent=null&limit=50&offset=0&include_attributes=id,status,start_timestamp,end_timestamp,action.ref,action.name,action.runner_type,action.parameters,parameters,rule.ref,trigger.type,context.user";
+	String url = "https://stackstorm/api/v1/executions?id=5d70b70951887f06fbe2036d&parent=null&limit=50&offset=0&include_attributes=id,status,start_timestamp,end_timestamp,action.ref,action.name,action.runner_type,action.parameters,parameters,rule.ref,trigger.type,context.user";
 
 	URL obj = new URL(url);
 	HttpURLConnection con = (HttpURLConnection) obj.openConnection();
