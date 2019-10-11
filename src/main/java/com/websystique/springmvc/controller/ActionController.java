@@ -2,6 +2,9 @@ package com.websystique.springmvc.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -25,7 +28,9 @@ public class ActionController {
     ActionService actionService;  
     
     @RequestMapping(value = "/action/", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
-    public String listAllActions() throws Exception{
+    public String listAllActions(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
+    	String id = httpRequest.getParameter("id");
+    	if(id!= null && !id.isEmpty()) return actionService.getAction(id);
 	   	return actionService.getActions();
     } 
     

@@ -5,7 +5,8 @@ angular.module('myApp').factory('ActionService', ['$http', '$q', function($http,
     var REST_SERVICE_URI = 'http://localhost:8080/StackStormManagement/action/';
 
     var factory = {
-    	fetchAllActions: fetchAllActions
+    	fetchAllActions: fetchAllActions,
+    	fetchAction: fetchAction
     };
     return factory;
 
@@ -43,5 +44,23 @@ angular.module('myApp').factory('ActionService', ['$http', '$q', function($http,
         );
         return deferred.promise;
     }
+    
+    function fetchAction(id) {
+      var deferred = $q.defer();
+       $http({
+		    method: 'GET', 
+		    params: { id: id},
+		    url: REST_SERVICE_URI
+		}).then(
+          function (response) {
+              deferred.resolve(response.data);
+          },
+          function(errResponse){
+              console.error('Error while fetching Actions');
+              deferred.reject(errResponse);
+          }
+      );
+      return deferred.promise;
+  }
 
 }]);

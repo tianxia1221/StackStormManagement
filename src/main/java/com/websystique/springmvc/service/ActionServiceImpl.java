@@ -17,12 +17,12 @@ import com.websystique.springmvc.model.User;
 public class ActionServiceImpl  implements ActionService{
 	
 	String url = "https://stackstorm/api/v1/actions?include_attributes=id,ref,pack,name,description,runner_type&pack=examples";
-	
+	String urlWithId = "https://stackstorm/api/v1/actions";
 	public String getActions() throws Exception {
 		return ForwardGetRequest.process(url);
 	}
 	
 	public String getAction(String id) throws Exception {
-		return ForwardGetRequest.process(url + "&id =" + id);
+		return ForwardGetRequest.process(urlWithId + "?id=" + id);
 	}
 }
