@@ -13,6 +13,7 @@ angular.module('myApp').controller('AnActionController', ['$scope', 'ActionServi
             .then(
             function(d) {
                 self.actions = d;
+                $scope.action = d;
             },
             function(errResponse){
                 console.error('Error while fetching Actions');

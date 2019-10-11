@@ -1,32 +1,73 @@
       <div class="generic-container" ng-controller="AnActionController as ctrl">
+
           <div class="panel panel-default">
               <div class="panel-heading"><span class="lead">This is the items of an action</span></div>
           </div>
           <div class="panel panel-default">
                 <!-- Default panel contents -->
               <div class="panel-heading"><span class="lead">List of Actions </span></div>
-              <div class="tablecontainer">
-                  <table class="table table-hover">
-                      <thead>
-                          <tr>
-                              <th>ref</th>
-                              <th>pack</th>
-                              <th>description</th>
-                              <th width="20%"></th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="u in ctrl.actions">
-                              <td><span ng-bind="u.ref"></span></td>
-                              <td><span ng-bind="u.pack"></span></td>
-                              <td><span ng-bind="u.description"></span></td>
-
-                              <td>
-                              <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Details</button>  
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
+           <div class="tablecontainer">
+				<table class="table table-hover">
+				    <tr>
+				        <th>id</th>
+				        <td>{{ctrl.actions[0].id}}</td>
+				    </tr>
+				    <tr>
+				        <th>uid</th>
+				        <td>{{ctrl.actions[0].uid}}</td>
+				    </tr>
+				    <tr>
+				        <th>ref</th>
+				        <td>{{ctrl.actions[0].ref}}</td>
+				    </tr>
+				    <tr>
+				        <th>pack</th>
+				        <td>{{ctrl.actions[0].pack}}</td>
+				    </tr>
+				    <tr>
+				        <th>name</th>
+				        <td>{{ctrl.actions[0].name}}</td>
+				    </tr>
+				    <tr>
+				        <th>description</th>
+				        <td>{{ctrl.actions[0].description}}</td>
+				    </tr>
+				    <tr>
+				        <th>enabled</th>
+				        <td>{{ctrl.actions[0].enabled}}</td>
+				    </tr>
+				    <tr>
+				        <th>entry_point</th>
+				        <td>{{ctrl.actions[0].entry_point}}</td>
+				    </tr>
+				    <tr>
+				        <th>runner_type</th>
+				        <td>{{ctrl.actions[0].runner_type}}</td>
+				    </tr>
+				    <tr>
+				        <th>parameters</th>
+				        <td>{{ctrl.actions[0].parameters}}</td>
+				    </tr>
+				    <tr>
+				        <th>metadata_file</th>
+				        <td>{{ctrl.actions[0].metadata_file}}</td>
+				    </tr>
+				    <tr>
+				        <th>notify</th>
+				        <td>{{ctrl.actions[0].notify}}</td>
+				    </tr>
+				    <tr>
+				        <th>output_schema</th>
+				        <td>{{ctrl.actions[0].output_schema}}</td>
+				    </tr>
+				    <tr>
+				        <th>tags</th>
+				        <td>{{ctrl.actions[0].tags}}</td>
+				    </tr>
+				
+				</table>
+				</table>
+                  
               </div>
           </div>
       </div>
