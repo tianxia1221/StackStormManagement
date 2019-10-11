@@ -8,7 +8,11 @@ var App = angular.module('myApp', [ 'ngRoute' ]).config(
 		        templateUrl: 'StackStormManagement/OneActionManagement.jsp',
 		        controller: 'OneActionController'
 			}).when('/printers', {
-				template : 'thist is printer'
+				templateUrl : 'static/html/a.html'
+			}).when('/b', {
+				templateUrl : 'static/html/b.html'
+			}).when('/test', {
+				templateUrl : 'static/html/test.html'
 			}).otherwise({
 				redirectTo : '/'
 			});

@@ -29,6 +29,16 @@
      <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
   </head>
   <body ng-app="myApp" class="ng-cloak">
+      <ul>
+            <li><a href="#/">home</a></li>
+            <li><a href="oneaction">one action</a></li>
+            <li><a href="#printers">print</a></li>
+             <li><a href="#b">b</a></li>
+              <li><a href="#test">test</a></li>
+            <li><a href="#/blabla">others</a></li>
+        </ul>
+      <div ng-view></div>
+      
       <div class="generic-container" ng-controller="ActionController as ctrl">
           <div class="panel panel-default">
               <div class="panel-heading"><span class="lead">Workflow List </span></div>
@@ -61,17 +71,12 @@
               </div>
           </div>
       </div>
-              <ul>
-            <li><a href="#/">home</a></li>
-            <li><a href="oneaction">one action</a></li>
-            <li><a href="#/printers">print</a></li>
-            <li><a href="#/blabla">others</a></li>
-        </ul>
-      <div ng-view></div>
+
       <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
       <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
       <script src="<c:url value='/static/js/app.js' />"></script>
       <script src="<c:url value='/static/js/service/action_service.js' />"></script>
       <script src="<c:url value='/static/js/controller/action_controller.js' />"></script>
-  </body>
+      <script src="<c:url value='/static/js/controller/test.js' />"></script>      
+        </body>
 </html>
