@@ -1,58 +1,59 @@
 package com.websystique.springmvc.service;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.security.cert.X509Certificate;
 import java.util.Base64;
 
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
 
-//import javax.net.ssl.SSLSession;
-//import javax.net.ssl.TrustManager;
-//import javax.security.cert.X509Certificate;
-
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class StackStormHttpsURLConnection {
-
-	// private final String USER_AGENT = "Mozilla/5.0";
-	private String token;
-	public String getToken() {
-		return token;
-	}
+public class StackStormToken {
+	private volatile static StackStormToken instance;
+	private static String token;
+//	public static String getToken() throws Exception {
+//		return token;
+//	}
 
 	public void setToken(String token) {
 		this.token = token;
 	}
+	
+    private StackStormToken(){}
+    public static String getToken() throws Exception{
+        if(token == null){
+            synchronized(StackStormToken.class){
+                if(token == null){
+            		trustAllHttpsCertificates();
+            		HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
+                	getTokenByPostMethod();
+                }
+            }
+        }
+        return token;
+    }
 
 	//private StackStormHttpsURLConnection http;
 
 	public static void main(String[] args) throws Exception {
-		StackStormHttpsURLConnection http = new StackStormHttpsURLConnection();
+		//StackStormToken http = StackStormToken.getInstance();
 
 		trustAllHttpsCertificates();
 		HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
 
-		http.getTokenByPostMethod();
-		
-		http.getWorkflows();
+		getTokenByPostMethod();
+//		
+//		http.getWorkflows();
 		
 	}
 
-	public void init() throws Exception {
+	public static void init() throws Exception {
 
 		trustAllHttpsCertificates();
 		HttpsURLConnection.setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
@@ -70,7 +71,7 @@ public class StackStormHttpsURLConnection {
 		javax.net.ssl.HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
 	}
 
-	private void getTokenByPostMethod() throws Exception {
+	private static void getTokenByPostMethod() throws Exception {
 		String url = "https://stackstorm/auth/v1/tokens";
 		String authString = "st2admin:Ch@ngeMe";
 

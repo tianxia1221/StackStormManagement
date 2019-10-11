@@ -13,8 +13,6 @@ angular.module('myApp').factory('ActionService', ['$http', '$q', function($http,
         var deferred = $q.defer();
 //        $http.get(REST_SERVICE_URI)
 //          .then(
-
-
     	$http({
 		    method: 'GET',
 		    url: REST_SERVICE_URI
@@ -24,6 +22,22 @@ angular.module('myApp').factory('ActionService', ['$http', '$q', function($http,
             },
             function(errResponse){
                 console.error('Error while fetching Actions');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }
+    
+    
+    function fetchOneActions(id) {
+        var deferred = $q.defer();
+	    $http.get(REST_SERVICE_URI+id)
+	       .then(
+            function (response) {
+                deferred.resolve(response.data);
+            },
+            function(errResponse){
+                console.error('Error while fetching an Action');
                 deferred.reject(errResponse);
             }
         );

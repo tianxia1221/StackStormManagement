@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('ActionController', ['$scope', 'ActionService', function($scope, ActionService) {
+angular.module('myApp').controller('ActionController', ['$scope', 'ActionService', '$location', function($scope, ActionService, location) {
     var self = this;
     self.user={ref:'',pack:'',description:''};
     self.users=[];
@@ -8,16 +8,22 @@ angular.module('myApp').controller('ActionController', ['$scope', 'ActionService
     fetchAllActions();
 
     function fetchAllActions(){
-    	ActionService.fetchAllActions()
-            .then(
-            function(d) {
-                self.actions = d;
-            },
-            function(errResponse){
-                console.error('Error while fetching Actions');
-            }
-        );
+    	location.url('StackStormManagement/oneaction');
+//    	ActionService.fetchAllActions()
+//            .then(
+//            function(d) {
+//                self.actions = d;
+//            },
+//            function(errResponse){
+//                console.error('Error while fetching Actions');
+//            }
+//        );
     }
+    
+    function fetchOneActions(){
+    	window.location="/index#/index/clientTakeGoods/clientTakeGoodsResult"
+    }
+    
 
 
 }]);

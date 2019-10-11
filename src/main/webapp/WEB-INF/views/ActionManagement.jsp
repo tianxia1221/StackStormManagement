@@ -61,8 +61,15 @@
               </div>
           </div>
       </div>
-      
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+              <ul>
+            <li><a href="#/">home</a></li>
+            <li><a href="oneaction">one action</a></li>
+            <li><a href="#/printers">print</a></li>
+            <li><a href="#/blabla">others</a></li>
+        </ul>
+      <div ng-view></div>
+      <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+      <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
       <script src="<c:url value='/static/js/app.js' />"></script>
       <script src="<c:url value='/static/js/service/action_service.js' />"></script>
       <script src="<c:url value='/static/js/controller/action_controller.js' />"></script>
