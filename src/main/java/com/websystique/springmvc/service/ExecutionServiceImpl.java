@@ -13,6 +13,12 @@ public class ExecutionServiceImpl implements ExecutionService {
 	}
 	
 	public String getExecution(String id) throws Exception {
-		return ForwardGetRequest.process(URL + "?id=" + id);
+		return ForwardGetRequest.process(URL + "/" + id+ "/children" );
+	}
+	
+	public String executionAction(String actionName) throws Exception {
+		String bodyFormat = "{\"action\": \"%s\",\"parameters\": {\"user\": \"%s\"}}";
+		String body = String.format(bodyFormat, actionName, "FanBingbing");
+		return ForwardPostRequest.process(URL, body);
 	}
 }

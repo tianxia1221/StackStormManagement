@@ -1,9 +1,13 @@
 package com.websystique.springmvc.controller;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,4 +25,12 @@ public class ExecutionController {
     	if(id!= null && !id.isEmpty()) return executionService.getExecution(id);
 	   	return executionService.getExecutions();
     } 
+    
+    @RequestMapping(value = "/execution/", method = RequestMethod.POST,  produces = MediaType.APPLICATION_JSON_VALUE)
+    public String executionAction(@RequestBody String actionName, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
+    	JSONObject obj = new JSONObject(actionName);
+    	actionName = obj.getString("actionName");
+    	return executionService.executionAction(actionName);
+    } 
+    
 }

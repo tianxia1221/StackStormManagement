@@ -2,8 +2,6 @@
 
 angular.module('myApp').controller('ActionController', ['$scope', 'ActionService', '$location', function($scope, ActionService, location) {
     var self = this;
-    self.user={ref:'',pack:'',description:''};
-    self.users=[];
 
     fetchAllActions();
 

@@ -1,10 +1,9 @@
 'use strict';
 
-angular.module('myApp').controller('ExecutionsController', ['$scope', 'ExecutionService', function($scope, ExecutionService) {
+angular.module('myApp').controller('ExecutionsController', ['$scope', 'ExecutionService',  '$location', function($scope, ExecutionService, location) {
     var self = this;
-    self.user={ref:'',pack:'',description:''};
-    self.users=[];
-
+    self.showDetails = showDetails;
+    
     fetchAllExecutions();
 
     function fetchAllExecutions(){
@@ -19,5 +18,8 @@ angular.module('myApp').controller('ExecutionsController', ['$scope', 'Execution
         );
     }
 
+    function showDetails(id){
+    	location.url('execution'+ "?id=" + id );
+    }
 
 }]);

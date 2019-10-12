@@ -25,7 +25,8 @@ public class ForwardGetRequest {
 		StringBuffer response = new StringBuffer();
 
 		while ((inputLine = in.readLine()) != null) {
-			response.append(inputLine);
+			response.append(inputLine + "\r\n" );
+			//response.append(inputLine);
 		}
 		in.close();
 		

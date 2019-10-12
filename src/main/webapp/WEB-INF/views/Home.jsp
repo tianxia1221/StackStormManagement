@@ -49,9 +49,10 @@
       
       <script src="<c:url value='/static/js/controller/actions.controller.js' />"></script>
       <script src="<c:url value='/static/js/controller/action.controller.js' />"></script>
-            <script src="<c:url value='/static/js/service/action_service.js' />"></script>
+      <script src="<c:url value='/static/js/service/action_service.js' />"></script>
       
       <script src="<c:url value='/static/js/controller/executions.controller.js' />"></script>
-            <script src="<c:url value='/static/js/service/execution_service.js' />"></script> 
+      <script src="<c:url value='/static/js/controller/execution.controller.js' />"></script>
+      <script src="<c:url value='/static/js/service/execution_service.js' />"></script> 
 	</body>
 </html>

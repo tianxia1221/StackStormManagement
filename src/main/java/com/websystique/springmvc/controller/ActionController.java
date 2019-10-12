@@ -22,4 +22,12 @@ public class ActionController {
     	if(id!= null && !id.isEmpty()) return actionService.getAction(id);
 	   	return actionService.getActions();
     } 
+    
+    @RequestMapping(value = "/action/views/entry_point", method = RequestMethod.GET,  produces = MediaType.TEXT_PLAIN_VALUE)
+    public String getActionEntryPoints(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
+    	String id = httpRequest.getParameter("id");
+    	if(id!= null && !id.isEmpty()) return actionService.getActionEntryPoints(id);
+	   	return "";
+    } 
+    
 }
