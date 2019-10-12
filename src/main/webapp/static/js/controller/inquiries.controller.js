@@ -19,7 +19,7 @@ angular.module('myApp').controller('InquiriesController', ['$scope', 'ExecutionS
     }
 
     function showDetails(id){
-    	location.url('execution'+ "?id=" + id );
+    	location.url('inquiry'+ "?id=" + id );
     }
 
 }]);

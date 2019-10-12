@@ -1,0 +1,17 @@
+<div  ng-controller="InquiryController as ctrl">
+  <div class="panel panel-default">
+      <div class="panel-heading"><span class="lead">This is an Inquiry which needs to be approved or not.</span></div>
+  </div>
+  <div class="panel panel-default">
+        <!-- Default panel contents -->
+      <div class="panel-heading"><span class="lead">List of Actions </span></div>
+      <div class="panel-heading"><span class="lead">{{ctrl.id}}</span></div>
+      
+	    <td>
+	          <button type="button" ng-click="ctrl.response()" class="btn btn-success custom-width">Response</button>  
+	    </td>
+      
+      <div class="tablecontainer">
+      </div>
+  </div>
+</div>

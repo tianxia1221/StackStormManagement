@@ -14,6 +14,8 @@ var App = angular.module('myApp', [ 'ngRoute' ]).config(
 				templateUrl : 'static/html/execution.html'
 			}).when('/inquiries', {
 				templateUrl : 'static/html/inquiries.html'
+			}).when('/inquiry', {
+				templateUrl : 'static/html/inquiry.html'
 			}).when('oneaction', {
 		        templateUrl: 'StackStormManagement/OneActionManagement.jsp',
 		        controller: 'OneActionController'

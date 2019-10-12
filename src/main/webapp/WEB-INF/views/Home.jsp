@@ -56,6 +56,8 @@
       <script src="<c:url value='/static/js/service/execution_service.js' />"></script> 
       
       <script src="<c:url value='/static/js/controller/inquiries.controller.js' />"></script>
+      <script src="<c:url value='/static/js/controller/inquiry.controller.js' />"></script>
+      <script src="<c:url value='/static/js/service/inquiry_service.js' />"></script> 
       
 	</body>
 </html>
