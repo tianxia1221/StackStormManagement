@@ -1,73 +1,72 @@
-      <div class="generic-container" ng-controller="AnActionController as ctrl">
+<div class="generic-container" ng-controller="AnActionController as ctrl">
 
-          <div class="panel panel-default">
-              <div class="panel-heading"><span class="lead">This is the items of an action</span></div>
-          </div>
-          <div class="panel panel-default">
-                <!-- Default panel contents -->
-              <div class="panel-heading"><span class="lead">List of Actions </span></div>
-           <div class="tablecontainer">
-				<table class="table table-hover">
-				    <tr>
-				        <th>id</th>
-				        <td>{{ctrl.actions[0].id}}</td>
-				    </tr>
-				    <tr>
-				        <th>uid</th>
-				        <td>{{ctrl.actions[0].uid}}</td>
-				    </tr>
-				    <tr>
-				        <th>ref</th>
-				        <td>{{ctrl.actions[0].ref}}</td>
-				    </tr>
-				    <tr>
-				        <th>pack</th>
-				        <td>{{ctrl.actions[0].pack}}</td>
-				    </tr>
-				    <tr>
-				        <th>name</th>
-				        <td>{{ctrl.actions[0].name}}</td>
-				    </tr>
-				    <tr>
-				        <th>description</th>
-				        <td>{{ctrl.actions[0].description}}</td>
-				    </tr>
-				    <tr>
-				        <th>enabled</th>
-				        <td>{{ctrl.actions[0].enabled}}</td>
-				    </tr>
-				    <tr>
-				        <th>entry_point</th>
-				        <td>{{ctrl.actions[0].entry_point}}</td>
-				    </tr>
-				    <tr>
-				        <th>runner_type</th>
-				        <td>{{ctrl.actions[0].runner_type}}</td>
-				    </tr>
-				    <tr>
-				        <th>parameters</th>
-				        <td>{{ctrl.actions[0].parameters}}</td>
-				    </tr>
-				    <tr>
-				        <th>metadata_file</th>
-				        <td>{{ctrl.actions[0].metadata_file}}</td>
-				    </tr>
-				    <tr>
-				        <th>notify</th>
-				        <td>{{ctrl.actions[0].notify}}</td>
-				    </tr>
-				    <tr>
-				        <th>output_schema</th>
-				        <td>{{ctrl.actions[0].output_schema}}</td>
-				    </tr>
-				    <tr>
-				        <th>tags</th>
-				        <td>{{ctrl.actions[0].tags}}</td>
-				    </tr>
-				
-				</table>
-				</table>
-                  
-              </div>
-          </div>
-      </div>
+  <div class="panel panel-default">
+    <div class="panel-heading"><span class="lead">The definition of the Action.</span></div>
+  </div>
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><span class="lead">Details </span></div>
+    <div class="tablecontainer">
+      <table class="table table-hover">
+        <tr>
+          <th>id</th>
+          <td>{{ctrl.actions[0].id}}</td>
+        </tr>
+        <tr>
+          <th>uid</th>
+          <td>{{ctrl.actions[0].uid}}</td>
+        </tr>
+        <tr>
+          <th>ref</th>
+          <td>{{ctrl.actions[0].ref}}</td>
+        </tr>
+        <tr>
+          <th>pack</th>
+          <td>{{ctrl.actions[0].pack}}</td>
+        </tr>
+        <tr>
+          <th>name</th>
+          <td>{{ctrl.actions[0].name}}</td>
+        </tr>
+        <tr>
+          <th>description</th>
+          <td>{{ctrl.actions[0].description}}</td>
+        </tr>
+        <tr>
+          <th>enabled</th>
+          <td>{{ctrl.actions[0].enabled}}</td>
+        </tr>
+        <tr>
+          <th>entry_point</th>
+          <td>{{ctrl.actions[0].entry_point}}</td>
+        </tr>
+        <tr>
+          <th>runner_type</th>
+          <td>{{ctrl.actions[0].runner_type}}</td>
+        </tr>
+        <tr>
+          <th>parameters</th>
+          <td>{{ctrl.actions[0].parameters}}</td>
+        </tr>
+        <tr>
+          <th>metadata_file</th>
+          <td>{{ctrl.actions[0].metadata_file}}</td>
+        </tr>
+        <tr>
+          <th>notify</th>
+          <td>{{ctrl.actions[0].notify}}</td>
+        </tr>
+        <tr>
+          <th>output_schema</th>
+          <td>{{ctrl.actions[0].output_schema}}</td>
+        </tr>
+        <tr>
+          <th>tags</th>
+          <td>{{ctrl.actions[0].tags}}</td>
+        </tr>
+
+      </table>
+
+    </div>
+  </div>
+</div>

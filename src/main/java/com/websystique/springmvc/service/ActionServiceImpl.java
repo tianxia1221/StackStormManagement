@@ -16,13 +16,15 @@ import com.websystique.springmvc.model.User;
 @Service("actionService")
 public class ActionServiceImpl  implements ActionService{
 	
-	String url = "https://stackstorm/api/v1/actions?include_attributes=id,ref,pack,name,description,runner_type&pack=examples";
-	String urlWithId = "https://stackstorm/api/v1/actions";
+	
+	private final String URL = "https://stackstorm/api/v1/actions";
+	private final String ATTRIBUTES = "?include_attributes=id,ref,pack,name,description,runner_type&pack=examples";
+	
 	public String getActions() throws Exception {
-		return ForwardGetRequest.process(url);
+		return ForwardGetRequest.process(URL + ATTRIBUTES);
 	}
 	
 	public String getAction(String id) throws Exception {
-		return ForwardGetRequest.process(urlWithId + "?id=" + id);
+		return ForwardGetRequest.process(URL + "?id=" + id);
 	}
 }

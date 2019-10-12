@@ -34,7 +34,7 @@
 		</br>
 		<div id="navigation">
 			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/actions">Actions   </a> 
-			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/execution">Executions   </a>
+			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/executions">Executions   </a>
 			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/inquiry">Inquiries   </a>
 		</div>
 
@@ -44,11 +44,14 @@
 	<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
       <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
       <script src="<c:url value='/static/js/app.js' />"></script>
-      <script src="<c:url value='/static/js/service/action_service.js' />"></script>
       <script src="<c:url value='/static/js/controller/action_controller.js' />"></script>
       <script src="<c:url value='/static/js/controller/test.js' />"></script>  
       
       <script src="<c:url value='/static/js/controller/actions.controller.js' />"></script>
       <script src="<c:url value='/static/js/controller/action.controller.js' />"></script>
+            <script src="<c:url value='/static/js/service/action_service.js' />"></script>
+      
+      <script src="<c:url value='/static/js/controller/executions.controller.js' />"></script>
+            <script src="<c:url value='/static/js/service/execution_service.js' />"></script> 
 	</body>
 </html>

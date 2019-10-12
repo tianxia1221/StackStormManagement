@@ -8,6 +8,8 @@ var App = angular.module('myApp', [ 'ngRoute' ]).config(
 				templateUrl : 'static/html/actions.html'
 			}).when('/action', {
 				templateUrl : 'static/html/action.html'
+			}).when('/executions', {
+				templateUrl : 'static/html/executions.html'
 			}).when('oneaction', {
 		        templateUrl: 'StackStormManagement/OneActionManagement.jsp',
 		        controller: 'OneActionController'

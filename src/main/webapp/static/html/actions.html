@@ -1,32 +1,32 @@
-      <div class="generic-container" ng-controller="ActionsController as ctrl">
-          <div class="panel panel-default">
-              <div class="panel-heading"><span class="lead">This is the action list, and workflow is a type of the actions</span></div>
-          </div>
-          <div class="panel panel-default">
-                <!-- Default panel contents -->
-              <div class="panel-heading"><span class="lead">List of Actions </span></div>
-              <div class="tablecontainer">
-                  <table class="table table-hover">
-                      <thead>
-                          <tr>
-                              <th>ref</th>
-                              <th>pack</th>
-                              <th>description</th>
-                              <th width="20%"></th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="u in ctrl.actions">
-                              <td><span ng-bind="u.ref"></span></td>
-                              <td><span ng-bind="u.pack"></span></td>
-                              <td><span ng-bind="u.description"></span></td>
+<div  ng-controller="ActionsController as ctrl">
+  <div class="panel panel-default">
+      <div class="panel-heading"><span class="lead">This is the action list, and workflow is a type of the actions.</span></div>
+  </div>
+  <div class="panel panel-default">
+        <!-- Default panel contents -->
+      <div class="panel-heading"><span class="lead">List of Actions </span></div>
+      <div class="tablecontainer">
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th>ref</th>
+                      <th>pack</th>
+                      <th>description</th>
+                      <th width="20%"></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="u in ctrl.actions">
+                      <td><span ng-bind="u.ref"></span></td>
+                      <td><span ng-bind="u.pack"></span></td>
+                      <td><span ng-bind="u.description"></span></td>
 
-                              <td>
-                              <button type="button" ng-click="ctrl.showDetails(u.id)" class="btn btn-success custom-width">Details</button>  
-                              </td>
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
+                      <td>
+                      <button type="button" ng-click="ctrl.showDetails(u.id)" class="btn btn-success custom-width">Details</button>  
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
       </div>
+  </div>
+</div>

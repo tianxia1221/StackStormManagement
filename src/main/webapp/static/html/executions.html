@@ -1,0 +1,38 @@
+<div ng-controller="ExecutionsController as ctrl">
+  <div class="panel panel-default">
+      <div class="panel-heading"><span class="lead">This is the Execution List </span></div>
+  </div>
+  <div class="panel panel-default">
+        <!-- Default panel contents -->
+      <div class="panel-heading"><span class="lead">List of Executions </span></div>
+      <div class="tablecontainer">
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th>id</th>
+                      <th>action.ref</th>
+                      <th>context.user</th>
+                      <th>status</th>
+                      <th>start_timestamp</th>
+                      <th>end_timestamp</th>
+                      <th width="20%"></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr ng-repeat="u in ctrl.executions">
+                      <td><span ng-bind="u.id"></span></td>
+                      <td><span ng-bind="u.action.ref"></span></td>
+                      <td><span ng-bind="u.context.user"></span></td>
+                      <td><span ng-bind="u.status"></span></td>
+                      <td><span ng-bind="u.start_timestamp"></span></td>
+                      <td><span ng-bind="u.end_timestamp"></span></td>
+
+                      <td>
+                      <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>  <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
