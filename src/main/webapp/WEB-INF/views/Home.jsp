@@ -35,7 +35,7 @@
 		<div id="navigation">
 			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/actions">Actions   </a> 
 			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/executions">Executions   </a>
-			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/inquiry">Inquiries   </a>
+			<a style="margin-left: 22px; color:#000000;; font-size:32px;" href="#/inquiries">Inquiries   </a>
 		</div>
 
 		<div ng-view=""></div>
@@ -54,5 +54,8 @@
       <script src="<c:url value='/static/js/controller/executions.controller.js' />"></script>
       <script src="<c:url value='/static/js/controller/execution.controller.js' />"></script>
       <script src="<c:url value='/static/js/service/execution_service.js' />"></script> 
+      
+      <script src="<c:url value='/static/js/controller/inquiries.controller.js' />"></script>
+      
 	</body>
 </html>

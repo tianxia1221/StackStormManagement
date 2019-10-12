@@ -3,11 +3,12 @@
 angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($http, $q){
 
     var REST_SERVICE_URI = 'http://localhost:8080/StackStormManagement/execution/';
-
+    var REST_SERVICE_URI_INQUIRES = 'http://localhost:8080/StackStormManagement/inquires/'; 
     var factory = {
     	fetchAllExecutions: fetchAllExecutions,
     	fetchExecution: fetchExecution,
-    	executionAction: executionAction
+    	executionAction: executionAction,
+    	getInquiries: getInquiries
     };
     return factory;
 
@@ -62,7 +63,20 @@ angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($ht
         return deferred.promise;
     }
     
-    
-    
+    function getInquiries() {
+        var deferred = $q.defer();
+        $http.get(REST_SERVICE_URI_INQUIRES)
+            .then(
+            function (response) {
+                deferred.resolve(response.data);
+            },
+            function(errResponse){
+                console.error('Error while fetching inquiries');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }
+
 
 }]);

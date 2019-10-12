@@ -1,4 +1,4 @@
-inquiriesinquiries<div  ng-controller="ActionsController as ctrl">
+inquiriesinquiries<div  ng-controller="InquiriesController as ctrl">
   <div class="panel panel-default">
       <div class="panel-heading"><span class="lead">This is the action list, and workflow is a type of the actions.</span></div>
   </div>
@@ -9,20 +9,20 @@ inquiriesinquiries<div  ng-controller="ActionsController as ctrl">
           <table class="table table-hover">
               <thead>
                   <tr>
-                      <th>ref</th>
-                      <th>pack</th>
-                      <th>description</th>
+                      <th>id</th>
+                      <th>status</th>
+                      <th>start_timestamp</th>
                       <th width="20%"></th>
                   </tr>
               </thead>
               <tbody>
-                  <tr ng-repeat="u in ctrl.actions">
-                      <td><span ng-bind="u.ref"></span></td>
-                      <td><span ng-bind="u.pack"></span></td>
-                      <td><span ng-bind="u.description"></span></td>
+                  <tr ng-repeat="u in ctrl.inquiries">
+                      <td><span ng-bind="u.id"></span></td>
+                      <td><span ng-bind="u.status"></span></td>
+                      <td><span ng-bind="u.start_timestamp"></span></td>
 
                       <td>
-                      <button type="button" ng-click="ctrl.showDetails(u.id)" class="btn btn-success custom-width">Details</button>  
+                      <button ng-disabled={{u.status=='succeeded'}} type="button" ng-click="ctrl.showDetails(u.id)" class="btn btn-success custom-width">Details</button>  
                       </td>
                   </tr>
               </tbody>
