@@ -20,19 +20,19 @@ public class InquiryController {
     @Autowired
 	ExecutionService executionService;  
     
-    @RequestMapping(value = "/inquires/", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/inquiries/", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
     public String listAllInquiris(@PathVariable String id, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
 	   	if(id != null && !id.isEmpty()) inquiryService.getInquiry(id);
     	return  executionService.getInquiries();
     } 
     
-    @RequestMapping(value = "/inquires/{id}", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/inquiries/{id}", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
     public String getInquiry(@PathVariable String id, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
 	   	if(id != null && !id.isEmpty()) inquiryService.getInquiry(id);
     	return  executionService.getInquiries();
     } 
 
-    @RequestMapping(value = "/inquires/", method = RequestMethod.PUT,  produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/inquiries/", method = RequestMethod.PUT,  produces = MediaType.APPLICATION_JSON_VALUE)
     public String response(@RequestBody String requestBody, HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
 	   	return  inquiryService.response(requestBody);
     } 

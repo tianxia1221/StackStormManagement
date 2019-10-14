@@ -1,5 +1,5 @@
 package org.json;
 
-public class s {
+public class inquires {
 
 }

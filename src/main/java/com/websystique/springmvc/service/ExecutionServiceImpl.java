@@ -25,4 +25,9 @@ public class ExecutionServiceImpl implements ExecutionService {
 	public String getInquiries() throws Exception {
 		return ForwardGetRequest.process(URL + INQUIRIES);
 	}
+	
+	public String getInquiry(String id) throws Exception {
+		return ForwardGetRequest.process(URL + "/" + id );
+	}
+
 }

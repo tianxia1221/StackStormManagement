@@ -3,12 +3,12 @@
 angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($http, $q){
 
     var REST_SERVICE_URI = 'http://localhost:8080/StackStormManagement/execution/';
-    var REST_SERVICE_URI_INQUIRES = 'http://localhost:8080/StackStormManagement/inquires/'; 
     var factory = {
     	fetchAllExecutions: fetchAllExecutions,
     	fetchExecution: fetchExecution,
     	executionAction: executionAction,
-    	getInquiries: getInquiries
+    	getInquiries: getInquiries,
+    	getInquiry: getInquiry
     };
     return factory;
 
@@ -31,7 +31,7 @@ angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($ht
         var deferred = $q.defer();
         $http({
 		    method: 'GET', 
-		    params: { id: id},
+		    params: { pid: id},
 		    url: REST_SERVICE_URI
 		}).then(
             function (response) {
@@ -65,13 +65,34 @@ angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($ht
     
     function getInquiries() {
         var deferred = $q.defer();
-        $http.get(REST_SERVICE_URI_INQUIRES)
-            .then(
+        $http({
+		    method: 'GET', 
+		    params: { inquiries: true},
+		    url: REST_SERVICE_URI
+		}).then(
             function (response) {
                 deferred.resolve(response.data);
             },
             function(errResponse){
                 console.error('Error while fetching inquiries');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }
+    
+    function getInquiry(id) {
+        var deferred = $q.defer();
+        $http({
+		    method: 'GET', 
+		    params: { id: id},
+		    url: REST_SERVICE_URI
+		}).then(
+            function (response) {
+                deferred.resolve(response.data);
+            },
+            function(errResponse){
+                console.error('Error while fetching inquiry');
                 deferred.reject(errResponse);
             }
         );

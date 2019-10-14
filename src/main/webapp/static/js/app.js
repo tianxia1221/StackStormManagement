@@ -3,7 +3,7 @@
 var App = angular.module('myApp', [ 'ngRoute' ]).config(
 		[ '$routeProvider', function($routeProvider) {
 			$routeProvider.when('/', {
-				template : 'this is home'
+				templateUrl : 'static/html/home.html'
 			}).when('/actions', {
 				templateUrl : 'static/html/actions.html'
 			}).when('/action', {

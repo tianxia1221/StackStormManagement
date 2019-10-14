@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('InquiryController', ['$scope', 'ExecutionService',  '$location', function($scope, ExecutionService, location) {
+angular.module('myApp').controller('AnExecutionController', ['$scope', 'ExecutionService',  '$location', function($scope, ExecutionService, location) {
     var self = this;
     self.user={ref:'',pack:'',description:''};
     self.users=[];

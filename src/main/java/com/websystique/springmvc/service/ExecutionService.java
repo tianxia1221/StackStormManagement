@@ -5,4 +5,6 @@ public interface ExecutionService {
 	public String getExecution(String id) throws Exception;
 	public String executionAction(String actionName) throws Exception;
 	public String getInquiries() throws Exception;
+	public String getInquiry(String id) throws Exception;
+	
 }

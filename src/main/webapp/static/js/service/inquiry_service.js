@@ -5,9 +5,8 @@ angular.module('myApp').factory('InquiryService', ['$http', '$q', function($http
     var REST_SERVICE_URI = 'http://localhost:8080/StackStormManagement/inquiries/';
 	 
     var factory = {
-    	fetchAllActions: fetchAllActions,
-    	fetchAction: fetchAction,
-    	getActionEntryPoints: getActionEntryPoints
+    		getInquiry: getInquiry,
+    		response: response,
     };
     return factory;
 
@@ -27,11 +26,11 @@ angular.module('myApp').factory('InquiryService', ['$http', '$q', function($http
        );
        return deferred.promise;
    }
-    response
+    
     function response(id, isApproved) {
         var deferred = $q.defer();
         $http({
- 		    method: 'GET', 
+ 		    method: 'PUT', 
  		    data: {id:id, response: {approved: isApproved}},
  		    url: REST_SERVICE_URI
  		}).then(

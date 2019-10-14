@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp').controller('InquiryController', ['$scope', 'InquiryService',  '$location', function($scope, InquiryService, location) {
+angular.module('myApp').controller('InquiryController', ['$scope', 'InquiryService', 'ExecutionService',  '$location', function($scope, InquiryService, ExecutionService, location) {
     var self = this;
     var id = location.search()['id'];
     
@@ -9,7 +9,7 @@ angular.module('myApp').controller('InquiryController', ['$scope', 'InquiryServi
     getInquiry(id);
 
     function getInquiry(id){
-    	InquiryService.getInquiry(id)
+    	ExecutionService.getInquiry(id)
             .then(
             function(d) {
                 self.inquiry = d;
@@ -21,7 +21,7 @@ angular.module('myApp').controller('InquiryController', ['$scope', 'InquiryServi
     }
 
     function response(){
-    	InquiryService.response(inquiry.id, true)
+    	InquiryService.response(self.inquiry.id, self.inquiry.result.response.approved)
             .then(
             function(d) {
             	alert('Response successfully');

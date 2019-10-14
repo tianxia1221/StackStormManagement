@@ -1,17 +1,19 @@
 <div  ng-controller="InquiryController as ctrl">
-  <div class="panel panel-default">
-      <div class="panel-heading"><span class="lead">This is an Inquiry which needs to be approved or not.</span></div>
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="lead">This is an Inquiry which needs to be approved or not.</span></div>
+    </div>
+    <div class="panel panel-default">
+          <!-- Default panel contents -->
+        <div class="panel-heading"><span class="lead">{{ctrl.inquiry.id}}</span></div>
+		  <div style="margin-top: 10px;margin-left: 17px; " >
+		          <input type="checkbox" ng-model="ctrl.inquiry.result.response.approved"> approved
+		          </br>
+		           <div style="margin-top: 10px; ">Continue?</div>
+		           </br>
+		           <div ng-show="ctrl.inquiry.status==='pending'">
+		           <button style="margin-left: 90px; "  type="button" ng-click="ctrl.response()" class="btn btn-success custom-width">Respond</button>
+		             </div>
+		 		</br>
+		  </div>
+    </div>
   </div>
-  <div class="panel panel-default">
-        <!-- Default panel contents -->
-      <div class="panel-heading"><span class="lead">List of Actions </span></div>
-      <div class="panel-heading"><span class="lead">{{ctrl.id}}</span></div>
-      
-	    <td>
-	          <button type="button" ng-click="ctrl.response()" class="btn btn-success custom-width">Response</button>  
-	    </td>
-      
-      <div class="tablecontainer">
-      </div>
-  </div>
-</div>

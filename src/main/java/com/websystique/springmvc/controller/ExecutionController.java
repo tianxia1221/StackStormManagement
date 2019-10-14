@@ -21,8 +21,19 @@ public class ExecutionController {
     
     @RequestMapping(value = "/execution/", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
         public String listAllActions(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
+    	String pid = httpRequest.getParameter("pid");
+    	if(pid!= null && !pid.isEmpty()) return executionService.getExecution(pid);
+    	
     	String id = httpRequest.getParameter("id");
-    	if(id!= null && !id.isEmpty()) return executionService.getExecution(id);
+    	if(id!= null && !id.isEmpty()) return executionService.getInquiry(id);
+    	
+    	String inquires = httpRequest.getParameter("inquiries");
+
+		//boolean isInquiries = Boolean.getBoolean(inquires);  
+    	if(inquires!= null && !inquires.isEmpty()) {
+	    	boolean isInquiries = Boolean.valueOf(inquires);   	
+			if(isInquiries) return executionService.getInquiries();
+    	}
 	   	return executionService.getExecutions();
     } 
     
