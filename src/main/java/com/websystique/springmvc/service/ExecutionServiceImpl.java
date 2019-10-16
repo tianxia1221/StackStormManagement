@@ -17,7 +17,8 @@ public class ExecutionServiceImpl implements ExecutionService {
 	}
 	
 	public String executionAction(String actionName) throws Exception {
-		String bodyFormat = "{\"action\": \"%s\",\"parameters\": {\"user\": \"%s\"}}";
+		//String bodyFormat = "{\"action\": \"%s\",\"parameters\": {\"user\": \"%s\"}}";
+		String bodyFormat = "{\"action\": \"%s\"}";
 		String body = String.format(bodyFormat, actionName, "FanBingbing");
 		return ForwardPostRequest.process(URL, body);
 	}
