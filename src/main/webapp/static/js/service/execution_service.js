@@ -12,6 +12,7 @@ angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($ht
     };
     return factory;
 
+    
     function fetchAllExecutions() {
         var deferred = $q.defer();
         $http.get(REST_SERVICE_URI)
@@ -32,7 +33,12 @@ angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($ht
         $http({
 		    method: 'GET', 
 		    params: { pid: id},
-		    url: REST_SERVICE_URI
+		    url: REST_SERVICE_URI,
+			headers: {
+				'Accept': 'application/json; charset=utf-8',
+				'Content-Type': 'application/json; charset=utf-8'				
+			}
+		    
 		}).then(
             function (response) {
                 deferred.resolve(response.data);
@@ -48,7 +54,7 @@ angular.module('myApp').factory('ExecutionService', ['$http', '$q', function($ht
     function executionAction(actionName) {
         var deferred = $q.defer();
         $http({
-		    method: 'POST', 
+		    method: 'GET', 
 		    url: REST_SERVICE_URI,
 		    data: {actionName: actionName},
 		}).then(

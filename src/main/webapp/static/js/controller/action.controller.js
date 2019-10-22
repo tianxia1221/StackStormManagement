@@ -3,6 +3,8 @@
 angular.module('myApp').controller('AnActionController', ['$scope', 'ActionService', 'ExecutionService', '$location', function($scope, ActionService, ExecutionService, location) {
     var self = this;
     self.executionAction = executionAction;
+    self.key = 'bag';
+    self.result ="";
 
     var id = location.search()['id'];
     fetchAction(id);
@@ -34,8 +36,8 @@ angular.module('myApp').controller('AnActionController', ['$scope', 'ActionServi
     }
     
     function executionAction(){
-        var name = self.actions[0].ref;
-    	ExecutionService.executionAction(name)
+     //   var name = self。key;
+    	ExecutionService.fetchExecution(self.key)
             .then(
             function(d) {
             	alert("An instance of the action is started successfully");

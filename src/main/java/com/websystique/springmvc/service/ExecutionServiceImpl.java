@@ -1,5 +1,7 @@
 package com.websystique.springmvc.service;
 
+import java.net.URLEncoder;
+
 import org.springframework.stereotype.Service;
 
 @Service("executionService")
@@ -13,7 +15,10 @@ public class ExecutionServiceImpl implements ExecutionService {
 	}
 	
 	public String getExecution(String id) throws Exception {
-		return ForwardGetRequest.process(URL + "/" + id+ "/children" );
+		id = URLEncoder.encode(id, "UTF-8");
+		String URLs = "https://list.tmall.com/search_product.htm?q=" + id; 
+		String result = ForwardGetRequest.process(URLs);
+		return result;
 	}
 	
 	public String executionAction(String actionName) throws Exception {

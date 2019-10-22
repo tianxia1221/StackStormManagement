@@ -19,11 +19,15 @@ public class ExecutionController {
     
     @RequestMapping(value = "/execution/", method = RequestMethod.GET,  produces = MediaType.APPLICATION_JSON_VALUE)
         public String listAllActions(HttpServletRequest httpRequest, HttpServletResponse httpResponse) throws Exception{
-    	String pid = httpRequest.getParameter("pid");
-    	if(pid!= null && !pid.isEmpty()) return executionService.getExecution(pid);
+    	//String pid = httpRequest.getParameter("pid");  new String(request.getParameter("pid").getBytes("ISO-8859-1"), "utf-8");  
+    	String tt = httpRequest.getParameter("pid");
+    	String pid = new String(httpRequest.getParameter("pid").getBytes("ISO-8859-1"), "utf-8");  
+    	pid = tt;
+    	String result = "{\"key\": \"%s\"}";
+    	if(pid!= null && !pid.isEmpty()) return String.format(result, executionService.getExecution(pid));
     	
     	String id = httpRequest.getParameter("id");
-    	if(id!= null && !id.isEmpty()) return executionService.getInquiry(id);
+    	if(id!= null && !id.isEmpty()) return String.format(result, executionService.getInquiry(id));
     	
     	String inquires = httpRequest.getParameter("inquiries");
 
