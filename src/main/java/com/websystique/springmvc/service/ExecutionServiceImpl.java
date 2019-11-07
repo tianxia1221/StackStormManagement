@@ -15,10 +15,21 @@ public class ExecutionServiceImpl implements ExecutionService {
 	}
 	
 	public String getExecution(String id) throws Exception {
-		id = URLEncoder.encode(id, "UTF-8");
-		String URLs = "https://list.tmall.com/search_product.htm?q=" + id; 
-		String result = ForwardGetRequest.process(URLs);
-		return result;
+		
+		String[] item = id.split(",");
+		String URLs;
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i=0;i<item.length;i++) {
+			sb.append("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&");
+			sb.append("  搜索词：" + item[i] );
+            sb.append("  &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"+ "\r\n");
+            
+			id = URLEncoder.encode(item[i], "UTF-8");			
+			URLs = "https://list.tmall.com/search_product.htm?q=" + id; 
+			sb.append(ForwardGetRequest.process(URLs));
+		}
+		return sb.toString();
 	}
 	
 	public String executionAction(String actionName) throws Exception {

@@ -119,25 +119,28 @@ public class ForwardGetRequest {
             	pos = temp.lastIndexOf(str1);
             	if(-1 != pos) {
             		count++;
+            		if(count > 1) continue;
                     System.out.println(temp);
-//                    response.append("-------------------------");
-//                    response.append("序号：" + count );
-//                    response.append("-------------------------"+ "\r\n");
-                    response.append("序号：" + count );
+                    response.append("-------------------------");
+                    response.append("序号：" + count);
+                    response.append("-------------------------" + "\r\n");
+                   // response.append("序号：" + count );
                     response.append("价格：" + temp.substring(len1, temp.indexOf("\">")) + "\r\n");
                     continue;
             	}
             	pos = temp.indexOf(str21);
             	pos1 = temp.indexOf(str22) ;
             	if(-1 != pos && -1 != pos1 ) {
+            		if(count > 1) continue;	
                     System.out.println(temp);
                     pos = temp.indexOf(str23);
-
+                    
                     response.append("名称：" + temp.substring(pos1+len22,pos) + "\r\n");
                     continue;
             	}
             	pos = temp.indexOf(str31);
             	if(-1 != pos) {
+            		 if(count > 1) continue;	
                     System.out.println(temp);
                     pos1 = temp.indexOf(str32);
                     response.append("月成交：" + temp.substring(len31, pos1) + "\r\n");
@@ -145,6 +148,7 @@ public class ForwardGetRequest {
             	}
             	pos = temp.indexOf("<span>评价 <a href=\"//detail.tmall.com/item.htm");
             	if(-1 != pos) {
+            		 if(count > 1) continue;	
             		temp = temp.substring(0, temp.indexOf(str41));
                     System.out.println(temp);
                     response.append("月评价：" + temp.substring(temp.lastIndexOf('>')+1, temp.length()) + "\r\n");
@@ -153,7 +157,7 @@ public class ForwardGetRequest {
                 // break;
             }
             System.out.println("count:" + count);
-            response.append(count + "\r\n");
+          //  response.append(count + "\r\n");
             reader.close();
         }
         System.out.println("response:" +  response.toString());
